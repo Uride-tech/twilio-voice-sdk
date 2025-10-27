@@ -1786,7 +1786,7 @@ SPEC CHECKSUMS:
   ReactCodegen: c08a5113d9c9c895fe10f3c296f74c6b705a60a9
   ReactCommon: 1bd2dc684d7992acbf0dfee887b89a57a1ead86d
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
-  twilio-voice-react-native: 36292471d1eae3f8a69c902fe3e29a4dbbe8b5f1
+  twilio-voice-react-native: b489189ec9424371283d708785e39a5235bec3cc
   TwilioVoice: 0eea89db614225bfea6b25cf2c909728dfcefa59
   Yoga: 78d74e245ed67bb94275a1316cdc170b9b7fe884
 

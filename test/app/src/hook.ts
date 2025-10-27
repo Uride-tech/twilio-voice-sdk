@@ -18,11 +18,6 @@ import type {
   EventLogItem,
 } from './type';
 
-interface ErrorResponse {
-  message?: string;
-  code?: string;
-}
-
 export function useNoOp(usage: string) {
   return React.useCallback(() => {
     console.log(usage);
@@ -265,9 +260,8 @@ export function useCallInvites(
             try {
               await callInvite.accept();
             } catch (err) {
-              const error = err as ErrorResponse
-              const message = error.message ?? "";
-              const code = error.code ?? "";
+              const message = err.message;
+              const code = err.code;
               logEvent(
                 `accept rejected: ${JSON.stringify({ message, code }, null, 2)}`
               );
@@ -383,9 +377,8 @@ export function useVoice(token: string) {
         });
         callHandler(call);
       } catch (err) {
-        const error = err as ErrorResponse
-        const message = error.message ?? "";
-        const code = error.code ?? "";
+        const message = err.message;
+        const code = err.code;
         logEvent(
           `connect rejected: ${JSON.stringify({ message, code }, null, 2)}`
         );
@@ -438,12 +431,10 @@ export function useVoice(token: string) {
       );
 
       setPreflightTest(() => _preflightTest);
-    } catch (err) {
-      const error = err as ErrorResponse
-      const message = error.message ?? "";
+    } catch (error) {
       logEvent(`preflight test error "${JSON.stringify({
         error,
-        message: message,
+        message: error.message,
       })}"`);
     }
   }, [logEvent, voice]);

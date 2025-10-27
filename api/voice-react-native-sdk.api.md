@@ -216,7 +216,7 @@ export class Call extends EventEmitter {
     getInitialConnectedTimestamp(): Date | undefined;
     getSid(): string | undefined;
     getState(): Call.State;
-    getStats(): Promise<RTCStats_2.StatsReport>;
+    getStats(): Promise<RTCStats.StatsReport>;
     getTo(): string | undefined;
     hold(hold: boolean): Promise<boolean>;
     isMuted(): boolean | undefined;
@@ -856,9 +856,9 @@ namespace RegistrationErrors {
 }
 
 // @public
-namespace RTCStats_2 {
+export namespace RTCStats {
     // (undocumented)
-    interface BaseTrackStats {
+    export interface BaseTrackStats {
         // (undocumented)
         codec: string;
         // (undocumented)
@@ -871,7 +871,7 @@ namespace RTCStats_2 {
         trackId: string;
     }
     // (undocumented)
-    enum IceCandidatePairState {
+    export enum IceCandidatePairState {
         // (undocumented)
         STATE_FAILED = "STATE_FAILED",
         // (undocumented)
@@ -884,7 +884,7 @@ namespace RTCStats_2 {
         STATE_WAITING = "STATE_WAITING"
     }
     // (undocumented)
-    interface IceCandidatePairStats {
+    export interface IceCandidatePairStats {
         // (undocumented)
         activeCandidatePair: boolean;
         // (undocumented)
@@ -943,7 +943,7 @@ namespace RTCStats_2 {
         writeable: boolean;
     }
     // (undocumented)
-    interface IceCandidateStats {
+    export interface IceCandidateStats {
         // (undocumented)
         candidateType: string;
         // (undocumented)
@@ -964,14 +964,14 @@ namespace RTCStats_2 {
         url: string;
     }
     // (undocumented)
-    interface LocalAudioTrackStats extends LocalTrackStats {
+    export interface LocalAudioTrackStats extends LocalTrackStats {
         // (undocumented)
         audioLevel: number;
         // (undocumented)
         jitter: number;
     }
     // (undocumented)
-    interface LocalTrackStats extends BaseTrackStats {
+    export interface LocalTrackStats extends BaseTrackStats {
         // (undocumented)
         bytesSent: number;
         // (undocumented)
@@ -980,7 +980,7 @@ namespace RTCStats_2 {
         roundTripTime: number;
     }
     // (undocumented)
-    interface RemoteAudioTrackStats extends RemoteTrackStats {
+    export interface RemoteAudioTrackStats extends RemoteTrackStats {
         // (undocumented)
         audioLevel: number;
         // (undocumented)
@@ -989,13 +989,13 @@ namespace RTCStats_2 {
         mos: number;
     }
     // (undocumented)
-    interface RemoteTrackStats extends BaseTrackStats {
+    export interface RemoteTrackStats extends BaseTrackStats {
         // (undocumented)
         bytesRecieved: number;
         // (undocumented)
         packetsReceived: number;
     }
-    interface StatsReport {
+    export interface StatsReport {
         // (undocumented)
         iceCandidatePairStats: IceCandidatePairStats[];
         // (undocumented)
@@ -1008,7 +1008,6 @@ namespace RTCStats_2 {
         remoteAudioTrackStats: RemoteAudioTrackStats[];
     }
 }
-export { RTCStats_2 as RTCStats }
 
 // @public
 namespace ServerErrors {
